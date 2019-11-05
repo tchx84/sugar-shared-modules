@@ -1,0 +1,14 @@
+{
+    "name": "ConfigParser",
+    "buildsystem": "simple",
+    "build-commands": [
+        "pip${PYTHON_VERSION} install --no-index --find-links \"file://${PWD}\" --install-option=\"--prefix=${FLATPAK_DEST}\" ConfigParser"
+    ],
+    "sources": [
+        {
+            "type": "file",
+            "url": "https://files.pythonhosted.org/packages/16/4f/48975536bd488d3a272549eb795ac4a13a5f7fcdc8995def77fbef3532ee/configparser-4.0.2.tar.gz",
+            "sha256": "c7d282687a5308319bf3d2e7706e575c635b0a470342641c93bea0ea3b5331df"
+        }
+    ]
+}

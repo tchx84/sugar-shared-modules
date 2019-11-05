@@ -1,0 +1,52 @@
+{
+    "name": "sugar-artwork",
+    "no-parallel-make": true,
+    "sources": [
+        {
+            "type": "git",
+            "url": "https://github.com/sugarlabs/sugar-artwork.git",
+            "tag": "v0.116"
+        },
+        {
+            "type": "patch",
+            "path": "artwork-fix-icon.patch"
+        }
+    ],
+    "modules": [
+        "../python/empy.json",
+        "../perl/xmlsimple.json",
+        {
+            "name": "xcursorgen",
+            "cleanup": [ "*" ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/freedesktop/xcursorgen.git",
+                    "tag": "xcursorgen-1.0.6"
+                }
+            ]
+        },
+        {
+            "name": "icon-naming-utils",
+            "cleanup": [ "*" ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/Distrotech/icon-naming-utils.git",
+                    "branch": "master"
+                }
+            ]
+        },
+        {
+            "name": "intltool",
+            "cleanup": [ "*" ],
+            "sources": [
+                {
+                  "type": "archive",
+                  "url": "https://launchpad.net/intltool/trunk/0.51.0/+download/intltool-0.51.0.tar.gz",
+                  "sha256": "67c74d94196b153b774ab9f89b2fa6c6ba79352407037c8c14d5aeb334e959cd"
+                }
+            ]
+        }
+    ]
+}

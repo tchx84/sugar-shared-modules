@@ -1,0 +1,62 @@
+{
+    "name": "sugar-toolkit-gtk3",
+    "buildsystem": "simple",
+    "build-commands": [
+        "/usr/bin/ls",
+        "./configure --prefix=${FLATPAK_DEST} --with-python${PYTHON_VERSION}",
+        "make install"
+    ],
+    "sources": [
+        {
+            "type": "archive",
+            "url": "http://download.sugarlabs.org/sources/sucrose/glucose/sugar-toolkit-gtk3/sugar-toolkit-gtk3-0.116.tar.xz",
+            "sha256": "745a360577efceb10f57ca4cbad5f9ec61f7ed6cc381eeb72422bbd7455b770b"
+        }
+    ],
+    "modules": [
+        "../python/dbus.json",
+        "../python/decorator.json",
+        "../python/six.json",
+        "../python/cairo.json",
+        "../python/gobject.json",
+        {
+            "name": "telepathy-glib",
+            "config-opts": ["--disable-static", "--disable-gtk-doc"],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://www.github.com/TelepathyIM/telepathy-glib.git",
+                    "tag": "telepathy-glib-0.24.1",
+                    "commit": "c834ef1a50a97cbfae7a0d560ff806fd5aa7ffe8"
+                },
+                {
+                    "type": "patch",
+                    "path": "telepathy-glib-uniquify.patch"
+                }
+            ]
+        },
+        {
+            "name": "dbus-glib",
+            "cleanup": [
+                "*.la",
+                "/bin",
+                "/etc",
+                "/include",
+                "/libexec",
+                "/share/gtk-doc",
+                "/share/man"
+            ],
+            "config-opts": [
+                "--disable-static",
+                "--disable-gtk-doc"
+            ],
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://dbus.freedesktop.org/releases/dbus-glib/dbus-glib-0.110.tar.gz",
+                    "sha256": "7ce4760cf66c69148f6bd6c92feaabb8812dee30846b24cd0f7395c436d7e825"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,14 @@
+{
+    "name": "sugarapp",
+    "buildsystem": "simple",
+    "build-commands": [
+        "pip${PYTHON_VERSION} install --no-index --find-links ${PWD} --install-option=\"--prefix=${FLATPAK_DEST}\" $PWD"
+    ],
+    "sources": [
+        {
+            "type": "git",
+            "url": "https://github.com/tchx84/sugarapp.git",
+            "branch": "master"
+        }
+    ]
+}
