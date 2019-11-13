@@ -20,22 +20,6 @@
         "../python/cairo.json",
         "../python/gobject.json",
         {
-            "name": "telepathy-glib",
-            "config-opts": ["--disable-static", "--disable-gtk-doc"],
-            "sources": [
-                {
-                    "type": "git",
-                    "url": "https://www.github.com/TelepathyIM/telepathy-glib.git",
-                    "tag": "telepathy-glib-0.24.1",
-                    "commit": "c834ef1a50a97cbfae7a0d560ff806fd5aa7ffe8"
-                },
-                {
-                    "type": "patch",
-                    "path": "telepathy-glib-uniquify.patch"
-                }
-            ]
-        },
-        {
             "name": "dbus-glib",
             "cleanup": [
                 "*.la",
@@ -55,6 +39,22 @@
                     "type": "archive",
                     "url": "https://dbus.freedesktop.org/releases/dbus-glib/dbus-glib-0.110.tar.gz",
                     "sha256": "7ce4760cf66c69148f6bd6c92feaabb8812dee30846b24cd0f7395c436d7e825"
+                }
+            ]
+        },
+        {
+            "name": "telepathy-glib",
+            "config-opts": ["--disable-static", "--disable-gtk-doc"],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://www.github.com/TelepathyIM/telepathy-glib.git",
+                    "tag": "telepathy-glib-0.24.1",
+                    "commit": "c834ef1a50a97cbfae7a0d560ff806fd5aa7ffe8"
+                },
+                {
+                    "type": "patch",
+                    "path": "telepathy-glib-uniquify.patch"
                 }
             ]
         }
