@@ -4,7 +4,7 @@
     "buildsystem": "simple",
     "build-commands": [
         "pip3 install --no-index --find-links=\"file://${PWD}\" --prefix=${FLATPAK_DEST} empy",
-        "install -D /app/lib/python3.5/site-packages/em.py /app/bin/empy",
+        "install -D /app/lib/python3.7/site-packages/em.py /app/bin/empy",
         "chmod +x /app/bin/empy"
     ],
     "sources": [
