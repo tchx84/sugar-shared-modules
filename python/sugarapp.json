@@ -8,7 +8,7 @@
         {
             "type": "git",
             "url": "https://github.com/tchx84/sugarapp.git",
-            "branch": "master"
+            "tag": "v1.0"
         }
     ]
 }
