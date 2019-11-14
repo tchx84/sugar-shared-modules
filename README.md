@@ -8,7 +8,7 @@ To use these modules, the flatpak manifest must include the following environmen
 ```
 "build-options": {
     "env": {
-        "PERL5LIB": "/app/lib/perl/site_perl/5.22.1/",
+        "PERL5LIB": "/app/lib/perl5/site_perl/5.30.0/",
         "PYTHON_VERSION": "3"
     }
 }
